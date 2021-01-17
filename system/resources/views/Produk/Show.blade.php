@@ -12,14 +12,9 @@
 				<div class="card-body">
 					<h3>{{$produk->nama}}</h3>
 					<hr>
-					<p>
-						{{$produk->harga}} |
-						Stock : {{$produk->stok}} |
-						Berat : {{$produk->berat}} Kg |
-						Produksi : {{$produk->created_at->format('d F Y')}} /
-						{{$produk->created_at->diffForHumans()}} |
-						Seller : {{$produk->seller->nama}}
-					</p>
+					<img src="{{url("public/$produk->foto")}}" width="50%">
+					@include('produk.show.detail')
+
 					<p>
 						{!! nl2br($produk->deskripsi) !!}
 					</p>

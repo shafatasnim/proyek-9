@@ -7,7 +7,8 @@
 		<div class="col-md-12 mt-2"> 
 			<div class="card">
 				<div class="card-header">
-					Tambah Data Produk <hr>
+					Edit Data Produk <hr>
+					<img src="{{url("public/$produk->foto")}}" width=50%">
 				</div>
 				<div class="card-body">
 					<form action="{{url('produk', $produk->id)}}" method="post">
@@ -17,8 +18,12 @@
 							<label for="" class="control-label">Nama</label>
 							<input type="text" class="form-control" name="nama" value="{{$produk->nama}}">
 						</div>
-						<div class="row no-gutters">
-							<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-3">
+									<label for="myfile">Foto</label>
+									<input type="file" id="" name="foto" accept="image/*">
+							</div>
+							<div class="col-md-3">
 								<div class="form-group">
 									<label for="" class="control-label">Harga</label>
 									<input type="text" class="form-control" name="harga" value="{{$produk->harga}}">

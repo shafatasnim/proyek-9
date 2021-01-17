@@ -1,3 +1,5 @@
+@inject('timeService', 'App\Services\TimeServices')
+
 @extends('template.base')
 
 @section('content')
@@ -7,7 +9,11 @@
 		<div class="col-md-12 mt-3">
 			<div class="card">
 				<div class="card-header">
+					<div class="float-right">
+						Jam : {{$timeService->showTimeNow()}}
+					</div>
 					Filter
+
 				</div>
 				<div class="card-body">
 					<form action="{{url('produk/filter')}}" method="post">
