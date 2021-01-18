@@ -13,7 +13,7 @@ class UserStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,19 @@ class UserStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nama' => 'required',
+            'username' => 'required|unique:user,username|gte:10',
+            'email' => 'required'
         ];
+
+       } 
+
+        function messages(){
+            return [
+                'nama.required' => 'Field Nama Wajib Di Isi',
+                'username.required' => 'Field Username Wajib Di Isi',
+                'username.unique' => 'Username Tersebut Sudah Terdaftar',
+                'email.required' => 'Email wajib di isi',    
+            ];
+        }
     }
-}
