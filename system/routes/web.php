@@ -7,6 +7,8 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ClientProdukController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PenjualProdukController;
+use App\Http\Controllers\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,19 +32,9 @@ Route::post('login', [AuthController::class, 'loginProcess']);
 Route::get('logout', [AuthController::class, 'logout']);
 
 
+// Penjual controller
 
-
-
-
-
-
-
-
-
-
-
-
-
+Route::get('penjual-dashboard', [PenjualProdukController::class, 'index']);
 
 
 Route::prefix('admin')->middleware('auth')->group(function(){
@@ -93,10 +85,6 @@ Route::prefix('admin')->middleware('auth')->group(function(){
 	});
 
 
-
-
-
-
 //clientprodukcontrollerr//
 
 Route::get('/', [ClientProdukController::class, 'index']);
@@ -109,3 +97,10 @@ Route::get('about', [ClientProdukController::class, 'about']);
 Route::get('index', [ClientProdukController::class, 'index']);
 Route::post('clientproduk/filterclient', [ClientProdukController::class, 'filterClient']);
 
+
+Route::get('test-collection', [HomeController::class, 'testCollection']);
+Route::get('test-ajax', [HomeController::class, 'testAjax']);
+
+//setting//
+Route::get('setting', [SettingController::class, 'index']);
+Route::post('setting', [SettingController::class, 'store']);

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Provinsi;
 
 class HomeController extends Controller{
 
@@ -25,4 +26,9 @@ class HomeController extends Controller{
 		echo "Nama Produk $produk";
 	}
 
+	function testAjax()
+    {
+        $data['list_provinsi'] = Provinsi::all();
+        return view('clientproduk.test-ajax', $data);
+    }
 }

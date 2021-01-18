@@ -133,6 +133,7 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                     <div class="row">
+
                                         <!-- produk -->
                                         @foreach($list_produk as $produk)
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -154,6 +155,11 @@
                                             </div>
                                         </div>
                                         @endforeach
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            test
+                                        </div>
                                     </div>
                                 </div> 
                             </div>
@@ -315,6 +321,8 @@
             </div>
         </div>
     </div>
+
+
     <!-- End Instagram Feed  -->
 
 

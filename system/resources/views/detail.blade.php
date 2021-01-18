@@ -12,7 +12,12 @@
         <h3>Detail Produk</h3>        
     </div>
       <div class="card-body">
-       <h3>{{$produk->nama}}</h3>
+        <div class="row">
+            <div class="col-md-3">
+                 <img src="{{url("public/$produk->foto")}}"class="img-fluid" alt="Image">
+            </div>
+            <div class="col-md-9">
+                <h3>{{$produk->nama}}</h3>
         <hr>
         <p>
             {{$produk->harga}} |
@@ -25,7 +30,10 @@
 
         <a class="btn btn-primary" href="{{url('clientproduk')}}">Back</a>
       </div>
-    </div>
+
+            </div>
+        </div>
+           </div>
 </div>
 
 </body>

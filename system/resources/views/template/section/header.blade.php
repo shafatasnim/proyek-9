@@ -19,7 +19,7 @@
                 </a>
               </li>
                <li class="nav-item">
-                <a class="nav-link" href="javascript:;">
+                <a class="nav-link" href="{{url('setting')}}">
                   <i class="material-icons">settings</i> Pengaturan
                 </a>
               </li>

@@ -8,15 +8,15 @@
 			<div class="card">
 				<div class="card-header">
 					Edit Data Produk <hr>
-					<img src="{{url("public/$produk->foto")}}" width=50%">
+					<img src="{{url("public/$produk->foto")}}" width=25%">
 				</div>
 				<div class="card-body">
-					<form action="{{url('produk', $produk->id)}}" method="post">
+					<form action="{{url('admin/produk', $produk->uuid)}}" method="post" required>
 						@csrf
 						@method("PUT")
 						<div class="form-group">
 							<label for="" class="control-label">Nama</label>
-							<input type="text" class="form-control" name="nama" value="{{$produk->nama}}">
+							<input type="text" class="form-control" name="nama" value="{{$produk->nama}}" required>
 						</div>
 						<div class="row">
 							<div class="col-md-3">
@@ -26,25 +26,25 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="" class="control-label">Harga</label>
-									<input type="text" class="form-control" name="harga" value="{{$produk->harga}}">
+									<input type="text" class="form-control" name="harga" placeholder ="{{$produk->harga}}" required>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="" class="control-label">Berat</label>
-									<input type="text" class="form-control" name="berat" value="{{$produk->berat}}">
+									<input type="text" class="form-control" name="berat" value="{{$produk->berat}}" required>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="" class="control-label">Stock</label>
-									<input type="text" class="form-control" name="stock" value="{{$produk->stok}}">
+									<input type="text" class="form-control" name="stock" value="{{$produk->stok}}" required>
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="" class="control-label">Deskripsi</label>
-							<textarea name="deskripsi" class="form-control">{{$produk->deskripsi}}</textarea>
+							<textarea name="deskripsi" class="form-control" required>{{$produk->deskripsi}}</textarea>
 						</div>
 						<button class="btn btn-primary float-right"><i class="fa fa-save"></i> Simpan</button>
 					</form>

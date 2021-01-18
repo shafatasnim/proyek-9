@@ -13,8 +13,9 @@ class ClientProdukController extends Controller{
 	}
 
 	function index(){
+		$data['list_produk'] =  Produk::simplePaginate(9);
 		$data['list_kategori'] = Kategori::all();
-		$data['list_produk'] = Produk::all();
+	
 		return view('index', $data);
 	}
 

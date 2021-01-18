@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\controllers\API\AlamatResource;
+use App\Http\controllers\API\ProdukResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::resource('produk', ProdukResource::class);
+
+Route::get('provinsi/{id}', [AlamatResource::class, 'getKabupaten']);
+Route::get('kabupaten/{id}', [AlamatResource::class, 'getKecamatan']);
+Route::get('kecamatan/{id}', [AlamatResource::class, 'getDesa']);

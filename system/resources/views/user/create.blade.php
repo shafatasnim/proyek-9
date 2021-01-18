@@ -23,8 +23,17 @@
 						<div class="form-group">
 							<label for="" class="control-label">Jenis Kelamin</label>
 							<select class="form-control" name="jenis_kelamin">
+								<option value="2">-- Pilih Jenis Kelamin --</option>
 								<option value="1">Laki-Laki</option>
 								<option value="2">Perempuan</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label">Level Pengguna</label>
+							<select class="form-control" name="level">
+								<option value="2">-- Pilih Level --</option>
+								<option value="2">Penjual</option>
+								<option value="3">Pembeli</option>
 							</select>
 						</div>
 						<div class="form-group">

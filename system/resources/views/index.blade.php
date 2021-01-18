@@ -133,6 +133,7 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                     <div class="row">
+
                                         <!-- produk -->
                                         @foreach($list_produk as $produk)
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -141,7 +142,7 @@
                                                     <div class="type-lb">
                                                         <p class="sale">Sale</p>
                                                     </div>
-                                                    <img src="{{url('public')}}/assets-client/images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                                    <img src="{{url("public/$produk->foto")}}"class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                       
                                                         <a class="cart" href="{{url('detail', $produk->id)}}" >Detail</a>
@@ -155,8 +156,10 @@
                                         </div>
                                         @endforeach
                                     </div>
+                                           
                                 </div> 
                             </div>
+                            {{$list_produk->links()}}
                         </div>
                     </div>
                 </div>

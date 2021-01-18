@@ -8,6 +8,7 @@ class ProdukController extends Controller{
 	function index(){
 		$user = request()->user();
 		$data['list_produk'] = $user->produk;
+		$data['list_produk'] =  Produk::simplePaginate(9);
 		return view('produk.index', $data);
 	}
 
@@ -44,17 +45,17 @@ class ProdukController extends Controller{
 		$produk->harga = request('harga');
 		$produk->berat = request('berat');
 		$produk->deskripsi = request('deskripsi');
-		$produk->save();
 
+		$produk->save();
 		$produk->handleDelete();
 		$produk->handleUploadFoto();
 
-		return redirect('admin.produk')->with('success', 'Data Berhasil Ditambahkan');
+		return redirect('admin/produk')->with('success', 'Data Berhasil Diedit');
 	}
 	function destroy(Produk $produk){
 		$produk->handleDelete();
 		$produk->delete();
-		return redirect('produk/index')->with('success', 'Data Berhasil Dihapus');
+		return redirect('admin/produk')->with('success', 'Data Berhasil Dihapus');
 	}
 
 	function filter(){
