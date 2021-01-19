@@ -11,7 +11,7 @@
 					<img src="{{url("public/$produk->foto")}}" width=25%">
 				</div>
 				<div class="card-body">
-					<form action="{{url('admin/produk', $produk->uuid)}}" method="post" required>
+					<form action="{{url('admin/produk', $produk->id)}}" method="post" required>
 						@csrf
 						@method("PUT")
 						<div class="form-group">

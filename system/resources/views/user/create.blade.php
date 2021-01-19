@@ -21,7 +21,7 @@
 						<div class="form-group">
 							<label for="" class="control-label">Username</label>
 							@include('template.utils.errors', ['item' => 'username'])
-							<inpu t type="text" class="form-control" name="username">
+							<input type="text" class="form-control" name="username">
 						</div>
 						<div class="form-group">
 							<label for="" class="control-label">Jenis Kelamin</label>
